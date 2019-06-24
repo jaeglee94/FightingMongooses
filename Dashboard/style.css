@@ -1,0 +1,36 @@
+/* remove default margin and padding from body */
+body {
+    padding: 0;
+    margin: 0;
+    background: lightgrey;
+  }
+  
+  .bg-primary {
+      color: white;
+      background-color: darkcyan !important;
+  }
+
+  .btn-primary,
+  .btn-primary:hover,
+  .btn-primary:active,
+  .btn-primary:visited,
+  .btn-primary:focus {
+      background-color: darkcyan;
+      border-color: darkcyan;
+  }
+
+  .ImageBorder
+{
+    border-width: 1px;
+    border-color: white;
+}
+
+  /* set map, body, and html to 100% of the screen size */
+  #map,
+  body,
+  html {
+    height: 100%;
+  }
+
+
+  
