@@ -1,3 +1,4 @@
+#import libraries
 from flask import (
     Flask,
     render_template,
@@ -6,15 +7,17 @@ from flask import (
     redirect)
 
 import sqlite3
+import os
 
 app = Flask(__name__)
 
-app.route("/")
+#homepage route
+@app.route("/")
 def home():
     return render_template("index.html")
 
 #connect
-conn = sqlite3.connect("routes.db")
+conn = sqlite3.connect(os.path.join("db","routes.db"))
 
 #obtain a cursor - something to loop through via database connection
 cur = conn.cursor()
@@ -29,21 +32,21 @@ headers = mytext.replace("CREATE TABLE Routes(\n  \"", "").replace("\" TEXT", ""
 cur.execute("SELECT * FROM Routes")
 rows = cur.fetchall()
 
-data = dict()
-count = 0
+finalData = dict()
 
-for item in headers:
-    columns = []
-    for row in rows:
-        columns.append(row[count])
-    data[item] = columns
-    count += 1
+for item in rows:
+    count = 0
+    interimData = dict()
+    for x in range(1,22):
+        interimData[headers[x]] =item[x]
+    finalData[int(item[0])]=interimData
+    
 
 # create route that returns data for plotting
 @app.route("/api/")
 def final_data():
 
-    return jsonify(data)
+    return jsonify(finalData)
 
 
 if __name__ == "__main__":
