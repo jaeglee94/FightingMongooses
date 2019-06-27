@@ -1,0 +1,98 @@
+<html>
+<head>
+<script src="https://cdn.anychart.com/releases/v8/js/anychart-core.min.js"></script>
+<script src="https://cdn.anychart.com/releases/v8/js/anychart-sankey.min.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script>
+anychart.onDocumentReady(function(){
+ //creating the data
+ var data = [
+ {from: "American Airlines", to: "Dallas", weight: 96839},
+ {from: "American Airlines", to: "Charlotte", weight: 74603},
+ {from: "American Airlines", to: "Chicago", weight: 71819},
+ {from: "American Airlines", to: "Philadelphia", weight: 55544},
+ {from: "American Airlines", to: "Washington", weight: 51044},
+ {from: "American Airlines", to: "Phoenix", weight: 47186},
+ {from: "American Airlines", to: "Los Angeles", weight: 38994},
+ {from: "American Airlines", to: "New York", weight: 35486},
+ {from: "American Airlines", to: "Miami", weight: 33187},
+ {from: "American Airlines", to: "Seattle", weight: 19972},
+ {from: "American Airlines", to: "Boston", weight: 16172},
+ {from: "American Airlines", to: "Portland", weight: 15066},
+ {from: "American Airlines", to: "San Diego", weight: 11053},
+ {from: "American Airlines", to: "Pittsburgh", weight: 9883},
+ {from: "American Airlines", to: "San Francisco", weight: 9729},
+ {from: "American Airlines", to: "St. Louis", weight: 9160},
+ {from: "American Airlines", to: "Orlando", weight: 8854},
+ {from: "American Airlines", to: "San Jose", weight: 8572},
+ {from: "American Airlines", to: "Raleigh-Durham", weight: 7222},
+ {from: "American Airlines", to: "Columbus", weight: 6783},
+ {from: "American Airlines", to: "Denver", weight: 6459},
+ {from: "Delta", to: "Atlanta", weight: 304647},
+ {from: "Delta", to: "Minneapolis", weight: 239518},
+ {from: "Delta", to: "Detroit", weight: 230509},
+ {from: "Delta", to: "New York", weight: 6358},
+ {from: "Delta", to: "Salt Lake City", weight: 172884},
+ {from: "Delta", to: "Cincinnati", weight: 79287},
+ {from: "Delta", to: "Orlando", weight: 58543},
+ {from: "Delta", to: "Memphis", weight: 44285},
+ {from: "Delta", to: "Raleigh-Durham", weight: 38931},
+ {from: "Delta", to: "Boston", weight: 35329},
+ {from: "Delta", to: "Washington", weight: 33096},
+ {from: "Delta", to: "Indianapolis", weight: 28525},
+ {from: "Delta", to: "Seattle", weight: 28055},
+ {from: "Delta", to: "Las Vegas", weight: 25454},
+ {from: "Delta", to: "Columbus", weight: 24955},
+ {from: "Delta", to: "Chicago", weight: 22426},
+ {from: "Delta", to: "San Francsico", weight: 21534},
+ {from: "Delta", to: "Tampa", weight: 20265},
+ {from: "Delta", to: "Kansas City", weight: 18870},
+ {from: "Delta", to: "New Orleans", weight: 18770},
+ {from: "Delta", to: "Houston", weight: 18547},
+ {from: "Southwest", to: "Chicago", weight: 207078},
+ {from: "Southwest", to: "Las Vegas", weight: 189529},
+ {from: "Southwest", to: "Denver", weight: 180750},
+ {from: "Southwest", to: "Baltimore", weight: 167195},
+ {from: "Southwest", to: "Phoenix", weight: 158757},
+ {from: "Southwest", to: "Houston", weight: 146785},
+ {from: "Southwest", to: "Orlando", weight: 130341},
+ {from: "Southwest", to: "Atlanta", weight: 127267},
+ {from: "Southwest", to: "Tampa", weight: 113970},
+ {from: "Southwest", to: "St. Louis", weight: 109605},
+ {from: "Southwest", to: "Nashville", weight: 98848},
+ {from: "Southwest", to: "Fort Lauderdale", weight: 81308},
+ {from: "Southwest", to: "Kansas City", weight: 78563},
+ {from: "Southwest", to: "Los Angeles", weight: 77588},
+ {from: "Southwest", to: "Austin", weight: 71558},
+ {from: "Southwest", to: "San Diego", weight: 67478},
+ {from: "Southwest", to: "New Orleans", weight: 65078},
+ {from: "Southwest", to: "Milwaukee", weight: 63771},
+ {from: "Southwest", to: "Oakland", weight: 59719},
+ {from: "Southwest", to: "Dallas", weight: 58278},
+]
+//calling the Sankey function
+var sankey_chart = anychart.sankey(data);
+//customizing the width of the nodes
+sankey_chart.nodeWidth("20%");
+//setting the chart title
+sankey_chart.title("Top Destinations by Airline");
+//customizing the vertical padding of the nodes
+sankey_chart.nodePadding(15);
+//customizing the visual appearance of nodes
+sankey_chart.node().normal().fill("#A1BFE4 0.8");
+sankey_chart.node().hovered().fill(anychart.color.darken("#64b5f7"));
+sankey_chart.node().normal().stroke("#455a63", 2);
+//customizing the visual appearance of flows
+sankey_chart.flow().normal().fill("#F26D6D 0.7");
+sankey_chart.flow().hovered().fill(anychart.color.darken("#ffa000"));
+sankey_chart.flow().hovered().stroke("#455a63");
+//setting the container id
+sankey_chart.container("container");
+//initiating drawing the Sankey diagram
+sankey_chart.draw();
+});
+</script>
+</body>
+</html>
