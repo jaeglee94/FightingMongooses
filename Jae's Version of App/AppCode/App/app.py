@@ -33,6 +33,7 @@ cur.execute("SELECT * FROM Routes")
 rows = cur.fetchall()
 
 finalData = dict()
+finalData2 = dict()
 
 for item in rows:
     count = 0
@@ -40,6 +41,18 @@ for item in rows:
     for x in range(1,22):
         interimData[headers[x]] =item[x]
     finalData[int(item[0])]=interimData
+
+for item in rows:
+    count = 0
+    interimData2 = dict()
+    interimData2['Airline'] =item[1]
+    interimData2['Source Airport Name'] =item[5]
+    interimData2['Source Airport Latitude'] =item[8]
+    interimData2['Source Airport Longitude'] =item[9]
+    interimData2['Destination Airport Name'] =item[13]
+    interimData2['Destination Airport Latitude'] =item[16]
+    interimData2['Destination Airport Longitude'] =item[17]
+    finalData2[int(item[0])]=interimData2
     
 
 # create route that returns data for plotting
@@ -47,6 +60,11 @@ for item in rows:
 def final_data():
 
     return jsonify(finalData)
+
+@app.route("/coordinates")
+def coordinate_data():
+
+    return jsonify(finalData2)
 
 
 if __name__ == "__main__":

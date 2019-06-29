@@ -21,7 +21,7 @@ d3.json(queryUrl, function(data) {
           x: ['American', 'Delta', 'Southwest'],
           y: [aaCount, dlCount, wnCount],
           marker:{
-              color:['blue','red','yellow']
+              color:['#C0C0C0','#FF0000','#0000FF']
           },
           type: 'bar'
         }
