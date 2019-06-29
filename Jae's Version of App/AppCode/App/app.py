@@ -43,7 +43,7 @@ for item in rows:
     
 
 # create route that returns data for plotting
-@app.route("/api/")
+@app.route("/api")
 def final_data():
 
     return jsonify(finalData)
