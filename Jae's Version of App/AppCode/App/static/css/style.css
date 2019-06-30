@@ -5,24 +5,20 @@ body {
     background: lightgrey;
   }
   
-  .bg-primary {
-      color: white;
-      background-color: darkcyan !important;
-  }
+.bg-primary {
+    color: white;
+    background-color: darkcyan !important;
+}
 
-  .btn-primary,
-  .btn-primary:hover,
-  .btn-primary:active,
-  .btn-primary:visited,
-  .btn-primary:focus {
-      background-color: darkcyan;
-      border-color: darkcyan;
-  }
+#sankeyBox{
+  padding-top:15px;
+}
 
-  .ImageBorder
-{
-    border-width: 1px;
-    border-color: white;
+#sankey{
+  width:1000px;
+  height:500px;
+  margin:0;
+  padding:0;
 }
 
   /* set map, body, and html to 100% of the screen size */
