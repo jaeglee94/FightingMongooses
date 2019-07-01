@@ -24,7 +24,6 @@ d3.json(queryUrl, function(data) {
           [data[i+1]['Source Airport Latitude'],data[i+1]['Source Airport Longitude']],
           [data[i+1]['Destination Airport Latitude'],data[i+1]['Destination Airport Longitude']]
         ],{
-          fillOpacity: 0.75,
           color: "#C0C0C0",
           weight: 1
         })
@@ -36,7 +35,6 @@ d3.json(queryUrl, function(data) {
           [data[i+1]['Source Airport Latitude'],data[i+1]['Source Airport Longitude']],
           [data[i+1]['Destination Airport Latitude'],data[i+1]['Destination Airport Longitude']]
         ],{
-          fillOpacity: 0.75,
           color: "#FF0000",
           weight: 1
         })
@@ -48,7 +46,6 @@ d3.json(queryUrl, function(data) {
           [data[i+1]['Source Airport Latitude'],data[i+1]['Source Airport Longitude']],
           [data[i+1]['Destination Airport Latitude'],data[i+1]['Destination Airport Longitude']]
         ],{
-          fillOpacity: 0.75,
           color: "#0000FF",
           weight: 1
         })
