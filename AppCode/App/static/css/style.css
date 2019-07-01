@@ -12,10 +12,24 @@ body {
 
 #sankeyBox{
   padding-top:15px;
+  position:absolute;
+  left:0px;
+  top:950px;
 }
 
+#leafBox{
+  padding-top:15px;
+  position:absolute;
+  left:0px;
+  top:1550px;
+}
+
+#leaflet{
+  height:700px;
+  width:1850px;
+}
 #sankey{
-  width:1000px;
+  width:1850px;
   height:500px;
   margin:0;
   padding:0;
