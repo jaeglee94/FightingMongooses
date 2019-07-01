@@ -26,6 +26,7 @@ d3.json(queryUrl, function(data) {
         ],{
           fillOpacity: 0.75,
           color: "#C0C0C0",
+          weight: 1
         })
       )
     }
@@ -37,6 +38,7 @@ d3.json(queryUrl, function(data) {
         ],{
           fillOpacity: 0.75,
           color: "#FF0000",
+          weight: 1
         })
       )
     }
@@ -48,6 +50,7 @@ d3.json(queryUrl, function(data) {
         ],{
           fillOpacity: 0.75,
           color: "#0000FF",
+          weight: 1
         })
       )
     }
